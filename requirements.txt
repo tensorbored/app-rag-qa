@@ -1,6 +1,6 @@
-langchain==0.3.2
-# langchain-chroma
-chromadb==0.3.29
+langchain
+langchain-chroma
+# chromadb==0.3.29
 langchain-community
 langchain-groq
 langchain-ollama

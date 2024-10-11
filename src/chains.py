@@ -10,10 +10,10 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.document_loaders import WebBaseLoader
 from langchain.chains import create_retrieval_chain
 from langchain_core.output_parsers import StrOutputParser
-import pysqlite3
-import sys
-sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
-import chromadb
+# import pysqlite3
+# import sys
+# sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+# import chromadb
 
 # from dotenv import load_dotenv
 # load_dotenv()
