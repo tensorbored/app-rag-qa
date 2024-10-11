@@ -48,7 +48,7 @@ def create_vector_embedding(documents):
         embeddings=OllamaEmbeddings(model="all-minilm")
         # vector_store.delete(ids=uuids[-1])
         # the below deletes all the chunks from the doc1 file
-        vectors=Chroma.from_documents(final_documents,embeddings,persist_directory='./repository/db')
+        vectors=Chroma.from_documents(final_documents,embeddings) #,persist_directory='./repository/db')
         # print("vectors:-----------------------------------------------------",vectors)
         # st.session_state.retriever = st.session_state.vectors.as_retriever()
         return vectors
