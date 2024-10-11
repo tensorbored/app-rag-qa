@@ -1,8 +1,8 @@
 import streamlit as st
 import os
 from langchain_groq import ChatGroq
-from chains import create_vector_embedding, load_document, load_url
-from chains import create_chain, clear_session_state_documents_vectors, create_vector_db
+from src.chains import create_vector_embedding, load_document, load_url
+from src.chains import create_chain, clear_session_state_documents_vectors, create_vector_db
 
 def main():
     st.title("RAG Document Q&A")

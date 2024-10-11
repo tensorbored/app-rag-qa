@@ -14,12 +14,11 @@ from langchain_core.output_parsers import StrOutputParser
 # from dotenv import load_dotenv
 # load_dotenv()
 
-
 def load_document(uploaded_files):
     ## Process uploaded PDF's
     documents=[]
     for uploaded_file in uploaded_files:
-        temppdf=f"./tmp/temp.pdf"
+        temppdf=f"./assets/temp.pdf"
         with open(temppdf,"wb") as file:
             file.write(uploaded_file.getvalue())
             # file_name=uploaded_file.name
@@ -45,7 +44,7 @@ def create_vector_embedding(documents):
         embeddings=OllamaEmbeddings(model="all-minilm")
         # vector_store.delete(ids=uuids[-1])
         # the below deletes all the chunks from the doc1 file
-        vectors=Chroma.from_documents(final_documents,embeddings,persist_directory='./db')
+        vectors=Chroma.from_documents(final_documents,embeddings,persist_directory='./repository/db')
         # print("vectors:-----------------------------------------------------",vectors)
         # st.session_state.retriever = st.session_state.vectors.as_retriever()
         return vectors
