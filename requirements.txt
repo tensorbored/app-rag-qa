@@ -1,4 +1,4 @@
-langchain
+langchain==0.2.14
 # langchain-chroma
 # chromadb==0.3.29
 langchain-community
