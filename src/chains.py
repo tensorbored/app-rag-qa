@@ -48,7 +48,7 @@ def create_vector_embedding(documents):
         # st.session_state.documents=st.session_state.loader.load() ## Document Loading
         text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)
         final_documents=text_splitter.split_documents(documents)
-        embeddings=OllamaEmbeddings(model="all-minilm")
+        # embeddings=OllamaEmbeddings(model="all-minilm")
         embeddings=HuggingFaceEmbeddings()
         # vector_store.delete(ids=uuids[-1])
         # the below deletes all the chunks from the doc1 file
