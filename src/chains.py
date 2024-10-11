@@ -1,5 +1,6 @@
 import streamlit as st
-from langchain_community.embeddings import OllamaEmbeddings
+# from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 # from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
@@ -9,6 +10,7 @@ from langchain_core.vectorstores import InMemoryVectorStore
 # from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.document_loaders import WebBaseLoader
+
 from langchain.chains import create_retrieval_chain
 from langchain_core.output_parsers import StrOutputParser
 # import pysqlite3
@@ -47,6 +49,7 @@ def create_vector_embedding(documents):
         text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)
         final_documents=text_splitter.split_documents(documents)
         embeddings=OllamaEmbeddings(model="all-minilm")
+        embeddings=HuggingFaceEmbeddings()
         # vector_store.delete(ids=uuids[-1])
         # the below deletes all the chunks from the doc1 file
         # vectors=Chroma.from_documents(final_documents,embeddings) #,persist_directory='./repository/db')
