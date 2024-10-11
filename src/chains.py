@@ -1,6 +1,6 @@
 import streamlit as st
 # from langchain_community.embeddings import OllamaEmbeddings
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 # from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
@@ -63,7 +63,8 @@ def clear_session_state_documents_vectors(st):
         del st.session_state["documents"]
     if "vectors" in st.session_state:
         # https://github.com/langchain-ai/langchain/discussions/9495#discussioncomment-10503820
-        st.session_state.vectors.reset_collection()
+        # st.session_state.vectors.reset_collection()
+        st.session_state.vectors.adelete()
         del st.session_state["vectors"]
 
 def create_vector_db(st):
