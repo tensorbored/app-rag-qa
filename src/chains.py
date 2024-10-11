@@ -4,7 +4,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 # from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 # from langchain_community.vectorstores import FAISS
-from langchain_chroma import Chroma
+# from langchain_chroma import Chroma
+from langchain_core.vectorstores import InMemoryVectorStore
 # from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.document_loaders import WebBaseLoader
@@ -48,7 +49,8 @@ def create_vector_embedding(documents):
         embeddings=OllamaEmbeddings(model="all-minilm")
         # vector_store.delete(ids=uuids[-1])
         # the below deletes all the chunks from the doc1 file
-        vectors=Chroma.from_documents(final_documents,embeddings) #,persist_directory='./repository/db')
+        # vectors=Chroma.from_documents(final_documents,embeddings) #,persist_directory='./repository/db')
+        vectors=InMemoryVectorStore.from_documents(final_documents,embeddings) #,persist_directory='./repository/db')
         # print("vectors:-----------------------------------------------------",vectors)
         # st.session_state.retriever = st.session_state.vectors.as_retriever()
         return vectors
