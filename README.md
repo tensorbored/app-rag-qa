@@ -3,8 +3,11 @@
 ## Description
 This Streamlit app is designed to provide users with answers to their questions based on uploaded pdf/url using RAG (Retrieval Augmented Generation) approach.
 
+## Run App Online
+Link: https://llm-qna.streamlit.app/
+
 ## Screenshots
-![img.png](imgs/rag-qa-app-screenshot.png)
+![img.png](assets/rag-qa-app-screenshot.png)
 
 ## Set-up
 1. To get started, first create an API_KEY from here: https://console.groq.com/keys. Then update the `GROQ_API_KEY` in the app text input with newly generated API_KEY. 
